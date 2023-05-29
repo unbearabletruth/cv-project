@@ -7,7 +7,7 @@ export default class PracticalExperience extends Component{
 
     render(){
         return (
-            <div id="personalInfo">
+            <div id="practicalExperience">
                 <p>Company name</p>
                 <p>Position title</p>
                 <p>Main tasks</p>

@@ -1,7 +1,8 @@
-import PersonalInfo from './components/generalnfo';
+import PersonalInfo from './components/personalInfo';
 import Education from './components/education';
 import PracticalExperience from './components/practicalExperience';
 import React, { Component } from 'react';
+import './app.css'; 
 
 class App extends Component{
   constructor(){
@@ -11,7 +12,7 @@ class App extends Component{
   render(){
     return (
       <div className="App">
-        <div id="personalAndEducation">
+        <div id="sidebar">
           <PersonalInfo/>
           <Education/>
         </div>
