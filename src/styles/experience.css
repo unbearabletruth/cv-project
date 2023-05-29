@@ -1,5 +1,6 @@
 #experienceWrapper{
     display: flex;
+    flex: 2;
     padding: 25px;
 }
 

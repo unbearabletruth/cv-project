@@ -26,7 +26,7 @@ export default class PracticalExperience extends Component{
                 {editable ?
                     <>
                         <div id="experienceForm">
-                        <h1>Fill in experience info</h1> 
+                        <h2>Fill in experience info</h2> 
                             <label>Company name:</label>
                             <input name = "company" value={this.state.company} onChange={this.handleChange}></input>
                             <label>Positon title:</label>
@@ -39,7 +39,7 @@ export default class PracticalExperience extends Component{
                     </>
                     :
                     <div id="experience">
-                        <h1>Experience</h1>
+                        <h2>Experience</h2>
                         <p>Full name: {this.state.school}</p>
                         <p>Email: {this.state.title}</p>
                         <p>Phone number: {this.state.date}</p>

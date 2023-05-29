@@ -4,8 +4,20 @@
 }
 
 #educationForm,
-#educationInfo{
+#education{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    gap: 15px;
+}
+
+.titleTextEd{
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.propertyEd{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }

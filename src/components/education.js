@@ -25,21 +25,38 @@ export default class Education extends Component{
                 {editable ?
                     <>
                         <div id="educationForm">
-                        <h1>Fill in education info</h1> 
-                            <label>School name:</label>
-                            <input name = "school" value={this.state.school} onChange={this.handleChange}></input>
-                            <label>Title of study:</label>
-                            <input name = "title" value={this.state.title} onChange={this.handleChange}></input>
-                            <label>Date of study:</label>
-                            <input name = "date" value={this.state.date} onChange={this.handleChange}></input>
+                        <h2>Fill in education info</h2>
+                        <hr></hr>
+                            <div className='propertyEd'>
+                                <label>School name:</label>
+                                <input name = "school" value={this.state.school} onChange={this.handleChange}></input>
+                            </div> 
+                            <div className='propertyEd'>
+                                <label>Title of study:</label>
+                                <input name = "title" value={this.state.title} onChange={this.handleChange}></input>
+                            </div>
+                            <div className='propertyEd'>
+                                <label>Date of study:</label>
+                                <input name = "date" value={this.state.date} onChange={this.handleChange}></input>
+                            </div> 
                         </div> 
                     </>
                     :
                     <div id="education">
-                        <h1>Education</h1>
-                        <p>Full name: {this.state.school}</p>
-                        <p>Email: {this.state.title}</p>
-                        <p>Phone number: {this.state.date}</p>
+                        <h2>Education</h2>
+                        <hr></hr>
+                        <div className='propertyEd'>
+                            <p className='titleTextEd'>School</p>
+                            <p className='infoTextEd'>{this.state.school}</p>
+                        </div>
+                        <div className='propertyEd'>
+                            <p className='titleTextEd'>Study</p>
+                            <p className='infoTextEd'>{this.state.title}</p>
+                        </div>
+                        <div className='propertyEd'>
+                            <p className='titleTextEd'>Date of study</p>
+                            <p className='infoTextEd'>{this.state.date}</p>
+                        </div>
                     </div>      
                 }    
             </div>

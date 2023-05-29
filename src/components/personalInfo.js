@@ -25,21 +25,38 @@ export default class PersonalInfo extends Component{
                 {editable ?
                     <>
                         <div id="personalInfoForm">
-                        <h1>Fill in personal Info</h1> 
-                            <label>Name</label>
-                            <input name = "name" value={this.state.name} onChange={this.handleChange}></input>
-                            <label>Email</label>
-                            <input name = "email" value={this.state.email} onChange={this.handleChange}></input>
-                            <label>Phone number</label>
-                            <input name = "phoneNumber" value={this.state.phoneNumber} onChange={this.handleChange}></input>
+                        <h2>Fill in personal Info</h2> 
+                        <hr></hr>
+                            <div className='property'>
+                                <label>Name</label>
+                                <input name = "name" value={this.state.name} onChange={this.handleChange}></input>
+                            </div>
+                            <div className='property'>
+                                <label>Email</label>
+                                <input name = "email" value={this.state.email} onChange={this.handleChange}></input>
+                            </div>
+                            <div className='property'>
+                                <label>Phone number</label>
+                                <input name = "phoneNumber" value={this.state.phoneNumber} onChange={this.handleChange}></input>
+                            </div>  
                         </div> 
                     </>
                     :
                     <div id="personalInfo">
-                        <h1>Personal Info</h1>
-                        <p>Full name: {this.state.name}</p>
-                        <p>Email: {this.state.email}</p>
-                        <p>Phone number: {this.state.phoneNumber}</p>
+                        <h2>Personal Info</h2>
+                        <hr></hr>
+                        <div className='property'>
+                            <p className='titleText'>Full name</p>
+                            <p className='infoText'>{this.state.name}</p>
+                        </div>
+                        <div className='property'>
+                            <p className='titleText'>Email</p>
+                            <p className='infoText'>{this.state.email}</p>
+                        </div>
+                        <div className='property'>
+                            <p className='titleText'>Phone number</p>
+                            <p className='infoText'>{this.state.phoneNumber}</p>
+                        </div>
                     </div>      
                 }    
             </div>
