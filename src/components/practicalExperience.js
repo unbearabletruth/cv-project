@@ -56,7 +56,7 @@ export default class PracticalExperience extends Component{
                         </div>
                         <div className='propertyExp'>
                             <p className='titleTextExp'>Position</p>
-                            <p className='infoTextExp'>{this.state.positon}</p>
+                            <p className='infoTextExp'>{this.state.position}</p>
                         </div>
                         <div className='propertyExp'>
                             <p className='titleTextExp'>Main tasks</p>
