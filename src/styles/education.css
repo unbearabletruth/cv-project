@@ -1,6 +1,5 @@
 #educationWrapper{
     display: flex;
-
 }
 
 #educationForm,
@@ -9,6 +8,7 @@
     flex-direction: column;
     justify-content: space-around;
     gap: 15px;
+    width: 100%;
 }
 
 .titleTextEd{

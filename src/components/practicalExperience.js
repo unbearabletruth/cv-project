@@ -7,7 +7,7 @@ export default class PracticalExperience extends Component{
 
         this.state = {
             company: "",
-            positon: "",
+            position: "",
             tasks: "",
             date: ""
         }
@@ -26,23 +26,46 @@ export default class PracticalExperience extends Component{
                 {editable ?
                     <>
                         <div id="experienceForm">
-                        <h2>Fill in experience info</h2> 
-                            <label>Company name:</label>
-                            <input name = "company" value={this.state.company} onChange={this.handleChange}></input>
-                            <label>Positon title:</label>
-                            <input name = "position" value={this.state.position} onChange={this.handleChange}></input>
-                            <label>Main tasks:</label>
-                            <input name = "tasks" value={this.state.tasks} onChange={this.handleChange}></input>
-                            <label>Date from and until you worked for the company:</label>
-                            <input name = "date" value={this.state.date} onChange={this.handleChange}></input>
+                        <h2>Fill in experience info</h2>
+                        <hr className='expHr'></hr>
+                            <div className='propertyExp'>
+                                <label>Company name</label>
+                                <input className="expInput" name = "company" value={this.state.company} onChange={this.handleChange}></input>
+                            </div>
+                            <div className='propertyExp'>
+                                <label>Positon title</label>
+                                <input className="expInput" name = "position" value={this.state.position} onChange={this.handleChange}></input>     
+                            </div>
+                            <div className='propertyExp'>
+                                <label>Main tasks</label>
+                                <textarea className="expInput" name = "tasks" value={this.state.tasks} onChange={this.handleChange}></textarea>
+                            </div>
+                            <div className='propertyExp'>
+                                <label>Date from and until you worked for the company</label>
+                                <input className="expInput" name = "date" value={this.state.date} onChange={this.handleChange}></input>
+                            </div>
                         </div> 
                     </>
                     :
                     <div id="experience">
                         <h2>Experience</h2>
-                        <p>Full name: {this.state.school}</p>
-                        <p>Email: {this.state.title}</p>
-                        <p>Phone number: {this.state.date}</p>
+                        <hr className='expHr'></hr>
+                        <div className='propertyExp'>
+                            <p className='titleTextExp'>Company</p>
+                            <p className='infoTextExp'>{this.state.company}</p>
+                        </div>
+                        <div className='propertyExp'>
+                            <p className='titleTextExp'>Position</p>
+                            <p className='infoTextExp'>{this.state.positon}</p>
+                        </div>
+                        <div className='propertyExp'>
+                            <p className='titleTextExp'>Main tasks</p>
+                            <p className='infoTextExp'>{this.state.tasks}</p>
+                        </div>
+                        <div className='propertyExp'>
+                            <p className='titleTextExp'>From and Until</p>
+                            <p className='infoTextExp'>{this.state.date}</p>
+                        </div>
                     </div>      
                 }    
             </div>
