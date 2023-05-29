@@ -11,5 +11,10 @@ body{
 
 .App{
     display: flex;
+    flex-direction: column;
     height: 100vh;
+}
+
+#infoWrapper{
+    display: flex;
 }

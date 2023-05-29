@@ -9,7 +9,6 @@ export default class PersonalInfo extends Component{
             name: "",
             email: "",
             phoneNumber: "",
-            editable: true
         }
     }
 
@@ -19,37 +18,21 @@ export default class PersonalInfo extends Component{
         }) 
     }
 
-    onSubmitTask = (e) => {
-        e.preventDefault();
-        this.setState({
-          name: this.state.name,
-          email: this.state.email,
-          phoneNumber: this.state.phoneNumber,
-          editable: false
-        });
-      };
-
-    makeEditable = (e) => {
-    this.setState({
-        editable: true
-        })
-    }
-
     render(){
+        let {editable} = this.props;
         return (
             <div id="personalInfoWrapper">
-                    {this.state.editable ?
+                    {editable ?
                         <>
-                        <h1>Personal Info</h1>
-                        <form id="personalInfoForm" onSubmit={this.onSubmitTask}>
-                            <label>Name</label>
-                            <input name = "name" value={this.state.name} onChange={this.handleChange}></input>
-                            <label>Email</label>
-                            <input name = "email" value={this.state.email} onChange={this.handleChange}></input>
-                            <label>Phone number</label>
-                            <input name = "phoneNumber" value={this.state.phoneNumber} onChange={this.handleChange}></input>
-                            <button type="submit">Save</button>
-                        </form>
+                            <div id="personalInfoForm">
+                            <h1>Enter Personal Info</h1> 
+                                <label>Name</label>
+                                <input name = "name" value={this.state.name} onChange={this.handleChange}></input>
+                                <label>Email</label>
+                                <input name = "email" value={this.state.email} onChange={this.handleChange}></input>
+                                <label>Phone number</label>
+                                <input name = "phoneNumber" value={this.state.phoneNumber} onChange={this.handleChange}></input>
+                            </div> 
                         </>
                         :
                         <div id="personalInfo">
@@ -57,7 +40,6 @@ export default class PersonalInfo extends Component{
                             <p>Full name: {this.state.name}</p>
                             <p>Email: {this.state.email}</p>
                             <p>Phone number: {this.state.phoneNumber}</p>
-                            <button type="submit" onClick={this.makeEditable}>Change</button>
                         </div>      
                     }    
             </div>
