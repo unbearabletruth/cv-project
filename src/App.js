@@ -32,9 +32,9 @@ class App extends Component{
         <div id="infoWrapper">
           <div id="sidebar">
             <PersonalInfo editable={this.state.editable}/>
-            <Education/>
+            <Education editable={this.state.editable}/>
           </div>
-          <PracticalExperience/>
+          <PracticalExperience editable={this.state.editable}/>
         </div>
           {this.state.editable ?
             <button type="submit" onClick={this.onSubmitTask}>Save</button>

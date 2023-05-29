@@ -1,10 +1,10 @@
-#personalInfoWrapper{
+#experienceWrapper{
     display: flex;
-
+    padding: 25px;
 }
 
-#personalInfoForm,
-#personalInfo{
+#experienceForm,
+#experience{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
