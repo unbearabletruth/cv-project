@@ -15,7 +15,7 @@ body{
 .App{
     display: flex;
     gap: 50px;
-    width: 800px;
+    width: 850px;
 }
 
 #infoWrapper{
@@ -28,6 +28,7 @@ body{
 #sidebar{
     display: flex;
     flex-direction: column;
+    width: 33%;
     flex: 1;
     justify-content: space-evenly;
     background-color: #475569;
