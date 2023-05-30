@@ -25,8 +25,9 @@ export default class PersonalInfo extends Component{
                 {editable ?
                     <>
                         <div id="personalInfoForm">
-                        <h2>Fill in personal Info</h2> 
-                        <hr></hr>
+                        <h2>Fill in personal Info
+                            <hr></hr>
+                        </h2> 
                             <div className='property'>
                                 <label>Name</label>
                                 <input 
@@ -55,8 +56,9 @@ export default class PersonalInfo extends Component{
                     </>
                     :
                     <div id="personalInfo">
-                        <h2>Personal Info</h2>
-                        <hr></hr>
+                        <h2>Personal Info
+                            <hr></hr>
+                        </h2>
                         <div className='property'>
                             <p className='titleText'>Full name</p>
                             <p className='infoText'>{this.state.name}</p>

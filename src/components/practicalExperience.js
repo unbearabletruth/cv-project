@@ -20,7 +20,8 @@ export default class PracticalExperience extends Component{
                 tasks: "",
                 date: "",
                 id: uniqid()
-            }]
+            }],
+            tooManyExp: false
         }
     }
 
@@ -32,15 +33,27 @@ export default class PracticalExperience extends Component{
                     return exp;
                 }
                 return exp;
-                })
+            })
         }) 
     }
-    
 
     addExp = (e) => {
         e.preventDefault();
+        if(this.state.allExps.length === 2){
+            this.setState({
+                tooManyExp: true
+            })
+            return
+        }
         this.setState({
           allExps: this.state.allExps.concat(this.state.exp),
+          exp: {
+            company: "",
+            position: "",
+            tasks: "",
+            date: "",
+            id: uniqid()
+        },
         });
       }
 
@@ -48,19 +61,19 @@ export default class PracticalExperience extends Component{
         let {editable} = this.props;
         return (
             <div id="experienceWrapper">
-                <h2>Fill in experience info</h2>
-                <hr className='expHr'></hr>
-                <button onClick={this.addExp}>add</button>
                 {this.state.allExps.map((exp) => {
                     if(editable){
                         return(
                             <div key={exp.id} id="experienceForm">
+                                <h2>Fill in experience info
+                                    <hr className='expHr'></hr>
+                                </h2>
                                 <div className='propertyExp'>
                                     <label>Company name</label>
                                     <input 
                                         className="expInput" 
                                         name = "company" 
-                                        value={this.state.company} 
+                                        value={exp.company} 
                                         onChange={(e) => this.handleChange(e, exp.id)}>
                                     </input>
                                 </div>
@@ -69,7 +82,7 @@ export default class PracticalExperience extends Component{
                                     <input 
                                         className="expInput" 
                                         name = "position" 
-                                        value={this.state.position} 
+                                        value={exp.position} 
                                         onChange={(e) => this.handleChange(e, exp.id)}>
                                     </input>     
                                 </div>
@@ -78,7 +91,7 @@ export default class PracticalExperience extends Component{
                                     <textarea 
                                         className="expInput" 
                                         name = "tasks" 
-                                        value={this.state.tasks} 
+                                        value={exp.tasks} 
                                         onChange={(e) => this.handleChange(e, exp.id)}>
                                     </textarea>
                                 </div>
@@ -87,10 +100,10 @@ export default class PracticalExperience extends Component{
                                     <input 
                                         className="expInput" 
                                         name = "date" 
-                                        value={this.state.date} 
+                                        value={exp.date} 
                                         onChange={(e) => this.handleChange(e, exp.id)}>
                                     </input>
-                                </div>   
+                                </div>  
                             </div> 
                         )  
                     }
@@ -98,8 +111,9 @@ export default class PracticalExperience extends Component{
                         console.log(exp)
                         return(
                         <div key={exp.id} id="experience">
-                            <h2>Experience</h2>
-                            <hr className='expHr'></hr>
+                            <h2>{`Job position at ${exp.company}`}
+                                <hr className='expHr'></hr>
+                            </h2>
                             <div className='propertyExp'>
                                 <p className='titleTextExp'>Company</p>
                                 <p className='infoTextExp'>{exp.company}</p>
@@ -119,7 +133,9 @@ export default class PracticalExperience extends Component{
                         </div>   
                         )
                     }    
-                })}    
+                })}
+                {editable ? <button id="addExp" onClick={this.addExp}>Add another job</button> : null}
+                {editable && this.state.tooManyExp ? <p id="tooManyExp">You can only add 2 jobs</p> : null}    
             </div>
         )
     }

@@ -1,15 +1,17 @@
 #experienceWrapper{
     display: flex;
+    flex-direction: column;
     flex: 2;
     padding: 25px;
     color: #475569;
+    gap: 15px;
 }
 
 #experienceForm,
 #experience{
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 15px;
 }
 
 .propertyExp{
@@ -30,3 +32,8 @@
     font-size: 0.8rem;
     font-weight: bold;
 }
+
+button#addExp{
+    font-size: 0.7rem;
+}
+

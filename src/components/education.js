@@ -25,8 +25,9 @@ export default class Education extends Component{
                 {editable ?
                     <>
                         <div id="educationForm">
-                        <h2>Fill in education info</h2>
-                        <hr></hr>
+                        <h2>Fill in education info
+                            <hr></hr>
+                        </h2>
                             <div className='propertyEd'>
                                 <label>School name:</label>
                                 <input 
@@ -55,8 +56,9 @@ export default class Education extends Component{
                     </>
                     :
                     <div id="education">
-                        <h2>Education</h2>
-                        <hr></hr>
+                        <h2>Education
+                            <hr></hr>
+                        </h2>
                         <div className='propertyEd'>
                             <p className='titleTextEd'>School</p>
                             <p className='infoTextEd'>{this.state.school}</p>
