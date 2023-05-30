@@ -29,15 +29,27 @@ export default class Education extends Component{
                         <hr></hr>
                             <div className='propertyEd'>
                                 <label>School name:</label>
-                                <input name = "school" value={this.state.school} onChange={this.handleChange}></input>
+                                <input 
+                                    name = "school" 
+                                    value={this.state.school} 
+                                    onChange={this.handleChange}>      
+                                </input>
                             </div> 
                             <div className='propertyEd'>
                                 <label>Title of study:</label>
-                                <input name = "title" value={this.state.title} onChange={this.handleChange}></input>
+                                <input 
+                                    name = "title" 
+                                    value={this.state.title} 
+                                    onChange={this.handleChange}>
+                                </input>
                             </div>
                             <div className='propertyEd'>
                                 <label>Date of study:</label>
-                                <input name = "date" value={this.state.date} onChange={this.handleChange}></input>
+                                <input 
+                                    name = "date" 
+                                    value={this.state.date} 
+                                    onChange={this.handleChange}>
+                                </input>
                             </div> 
                         </div> 
                     </>

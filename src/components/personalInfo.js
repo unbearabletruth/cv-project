@@ -29,15 +29,27 @@ export default class PersonalInfo extends Component{
                         <hr></hr>
                             <div className='property'>
                                 <label>Name</label>
-                                <input name = "name" value={this.state.name} onChange={this.handleChange}></input>
+                                <input 
+                                    name = "name" 
+                                    value={this.state.name} 
+                                    onChange={this.handleChange}>
+                                </input>
                             </div>
                             <div className='property'>
                                 <label>Email</label>
-                                <input name = "email" value={this.state.email} onChange={this.handleChange}></input>
+                                <input 
+                                    name = "email" 
+                                    value={this.state.email} 
+                                    onChange={this.handleChange}>
+                                </input>
                             </div>
                             <div className='property'>
                                 <label>Phone number</label>
-                                <input name = "phoneNumber" value={this.state.phoneNumber} onChange={this.handleChange}></input>
+                                <input 
+                                    name = "phoneNumber" 
+                                    value={this.state.phoneNumber} 
+                                    onChange={this.handleChange}>
+                                </input>
                             </div>  
                         </div> 
                     </>
