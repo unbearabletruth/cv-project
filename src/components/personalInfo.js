@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import '../styles/personalInfo.css'; 
+import Avatar from '../images/avatar.png'
 
 export default class PersonalInfo extends Component{
     constructor(props){
         super(props)
 
         this.state = {
+            picture: Avatar,
             name: "",
             email: "",
             phoneNumber: "",
@@ -18,8 +20,15 @@ export default class PersonalInfo extends Component{
         }) 
     }
 
+    handleImage = (e) => {
+        this.setState({
+            picture: URL.createObjectURL(e.target.files[0])
+        })    
+    }
+
     render(){
         let {editable} = this.props;
+        console.log(this.state.picture)
         return (
             <div id="personalInfoWrapper">
                 {editable ?
@@ -28,6 +37,16 @@ export default class PersonalInfo extends Component{
                         <h2>Fill in personal Info
                             <hr></hr>
                         </h2> 
+                            <div className='property'>
+                                <label>Profile picture</label>
+                                <input 
+                                    type="file"
+                                    id="avatar"
+                                    name="avatar"
+                                    accept="image/png, image/jpeg"
+                                    onChange={this.handleImage}>
+                                </input>
+                            </div>
                             <div className='property'>
                                 <label>Name</label>
                                 <input 
@@ -56,6 +75,7 @@ export default class PersonalInfo extends Component{
                     </>
                     :
                     <div id="personalInfo">
+                        <img src={this.state.picture} alt="avatar" id="avatarImg"></img>
                         <h2>Personal Info
                             <hr></hr>
                         </h2>
