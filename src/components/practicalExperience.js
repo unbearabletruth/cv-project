@@ -4,13 +4,6 @@ import uniqid from "uniqid";
 
 export default function PracticalExperience({editable}){
     const [data, setData] = useState({
-        exp: {
-            company: "",
-            position: "",
-            tasks: "",
-            date: "",
-            id: uniqid()
-        },
         allExps: [{
             company: "",
             position: "",
@@ -23,6 +16,7 @@ export default function PracticalExperience({editable}){
 
     const handleChange = (e, id) => {
         setData({
+            ...data,
             allExps: data.allExps.map((exp) => {
                 if(exp.id === id){
                     exp[e.target.name] = e.target.value
@@ -37,26 +31,26 @@ export default function PracticalExperience({editable}){
         e.preventDefault();
         if(data.allExps.length === 2){
             setData({
+                ...data,
                 tooManyExp: true
             })
             return
         }
         setData({
-          allExps: data.allExps.concat(data.exp),
-          exp: {
-            company: "",
-            position: "",
-            tasks: "",
-            date: "",
-            id: uniqid()
-        },
+            ...data,
+            allExps: data.allExps.concat({
+                company: "",
+                position: "",
+                tasks: "",
+                date: "",
+                id: uniqid()
+            })
         });
       }
-      console.log(data.allExps)
+
     return (
         <div id="experienceWrapper">
             {data.allExps.map((exp) => {
-                console.log(exp)
                 if(editable){
                     return(
                         <div key={exp.id} id="experienceForm">
