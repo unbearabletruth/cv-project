@@ -1,49 +1,38 @@
 import PersonalInfo from './components/personalInfo';
 import Education from './components/education';
 import PracticalExperience from './components/practicalExperience';
-import React, { Component } from 'react';
+import React, { useState } from "react";
 import './app.css'; 
 
-class App extends Component{
-  constructor(){
-    super()
-
-    this.state = {
-      editable: true,
-    }
+function App(){
+  const [editable, setEditable] = useState(true);
+  
+  const makeEditable = (e) => {
+    setEditable(true);
   }
 
-  makeEditable = (e) => {
-    this.setState({
-        editable: true
-    })
-  }
-
-  onSubmitTask = (e) => {
+  const onSubmitTask = (e) => {
     e.preventDefault();
-    this.setState({
-      editable: false
-    });
+    setEditable(false);
   };
 
-  render(){
-    return ( 
-      <div className="App">
-        <div id="infoWrapper">
-          <div id="sidebar">
-            <PersonalInfo editable={this.state.editable}/>
-            <Education editable={this.state.editable}/>
-          </div>
-          <PracticalExperience editable={this.state.editable}/>
+  return ( 
+    <div className="App">
+      <div id="infoWrapper">
+        <div id="sidebar">
+          <PersonalInfo editable={editable}/>
+          <Education editable={editable}/>
         </div>
-          {this.state.editable ?
-            <button type="submit" onClick={this.onSubmitTask}>Save</button>
-          :
-            <button type="button" onClick={this.makeEditable}>Change</button>
-          }  
+        <PracticalExperience editable={editable}/>
       </div>
-    );
-  }  
-}
+        {editable ?
+          <button type="submit" onClick={onSubmitTask}>Save</button>
+        :
+          <button type="button" onClick={makeEditable}>Change</button>
+        }  
+    </div>
+  );
+}  
+
 
 export default App;
