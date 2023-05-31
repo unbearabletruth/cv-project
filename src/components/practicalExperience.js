@@ -7,13 +7,6 @@ export default class PracticalExperience extends Component{
         super(props)
 
         this.state = {
-            exp: {
-                company: "",
-                position: "",
-                tasks: "",
-                date: "",
-                id: uniqid()
-            },
             allExps: [{
                 company: "",
                 position: "",
@@ -46,14 +39,13 @@ export default class PracticalExperience extends Component{
             return
         }
         this.setState({
-          allExps: this.state.allExps.concat(this.state.exp),
-          exp: {
+          allExps: this.state.allExps.concat({
             company: "",
             position: "",
             tasks: "",
             date: "",
             id: uniqid()
-        },
+          })
         });
       }
 
